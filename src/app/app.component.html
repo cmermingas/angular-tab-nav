@@ -1,3 +1,16 @@
 <h1>
   {{title}}
 </h1>
+
+<ul class="nav">
+  <li (click)="clickTab(1)" [class.active]="activeTab === 1">Tab 1</li>
+  <li (click)="clickTab(2)" [class.active]="activeTab === 2">Tab 2</li>
+  <li (click)="clickTab(3)" [class.active]="activeTab === 3">Tab 3</li>
+  <li (click)="clickTab(4)" [class.active]="activeTab === 4">Tab 4</li>
+</ul>
+<div class="nav-content">
+  <div class="big-badge" *ngIf="activeTab === 1" [@flyIn]="in">1</div>
+  <div class="big-badge" *ngIf="activeTab === 2" [@flyIn]="in">2</div>
+  <div class="big-badge" *ngIf="activeTab === 3" [@flyIn]="in">3</div>
+  <div class="big-badge" *ngIf="activeTab === 4" [@flyIn]="in">4</div>
+</div>
